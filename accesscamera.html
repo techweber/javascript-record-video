@@ -1,0 +1,12 @@
+<video id="player" controls></video>
+
+<script>
+	var player = document.getElementById('player');
+
+	var handleSuccess = function(stream){
+		player.srcObject = stream;
+	};
+
+	navigator.mediaDevices.getUserMedia({audio: true, video: true}).then(handleSuccess);
+
+</script>
